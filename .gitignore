@@ -1,0 +1,17 @@
+**/.DS_Store
+**/.vscode/
+**/build/
+**/dist/
+**/*egg*
+**/*.pyc
+**/.vscode
+**/*_cache
+**/__pycache__
+*coverage*
+venv/
+.venv/
+*.zip
+**/.terraform*
+*.tfstate*
+**/.pytest_cache
+docs

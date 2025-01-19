@@ -1,0 +1,23 @@
+[project]
+name = "template-project"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.115.6",
+]
+
+[dependency-groups]
+dev = [
+    "bandit>=1.8.2",
+    "pdoc>=15.0.1",
+    "pip-audit>=2.7.3",
+    "pytest>=8.3.4",
+    "pytest-cov>=6.0.0",
+    "pytest-testdox>=3.1.0",
+    "ruff>=0.9.2",
+]
+
+[tool.pytest.ini_options]
+pythonpath = "."
