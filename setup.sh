@@ -2,10 +2,11 @@
 
 CODE_FOLDER='src'
 TEST_FOLDER='test'
+ENTRYPOINT='app'
 
 build () {
     uv sync
-    uv run pdoc src/app -o ./docs
+    uv run pdoc ${CODE_FOLDER}/${ENTRYPOINT} -o ./docs
 }
 
 unit-test () {
@@ -22,7 +23,7 @@ checker () {
 
 sec-check () {
     uv run pip-audit
-    uv run bandit src
+    uv run bandit ${CODE_FOLDER}
 }
 
 all-checks () {
@@ -30,6 +31,10 @@ all-checks () {
     checker
     unit-test
     sec-check
+}
+
+run-app () {
+    uv run fastapi dev ${CODE_FOLDER}/${ENTRYPOINT}.py
 }
 
 build
